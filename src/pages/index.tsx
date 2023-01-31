@@ -1,5 +1,11 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
-    <h1 className="text-3xl font-bold text-red-500 underline">Hello world!</h1>
+    <>
+      <header className="w-full h-20 bg-white flex items-center">
+        <Image src="/logo.svg" alt="WINE Logo" width={100} height={32} />
+      </header>
+    </>
   );
 }
