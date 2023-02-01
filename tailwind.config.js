@@ -11,6 +11,7 @@ module.exports = {
       },
       colors: {
         mainBG: "#DEDEDE",
+        hover: "#D14B8F",
       },
     },
   },
