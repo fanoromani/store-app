@@ -23,9 +23,9 @@ export function Header() {
           </button>
         </div>
         <div className="flex gap-10">
-          <Image src="/search.svg" alt="WINE Logo" width={56} height={56} />
-          <Image src="/avatar.svg" alt="WINE Logo" width={56} height={56} />
-          <Image src="/winebox.svg" alt="WINE Logo" width={56} height={56} />
+          <Image src="/search.svg" alt="Search Icon" width={56} height={56} />
+          <Image src="/avatar.svg" alt="Avatar Icon" width={56} height={56} />
+          <Image src="/winebox.svg" alt="Winebox Icon" width={56} height={56} />
         </div>
       </header>
     </>
