@@ -1,6 +1,6 @@
 export function Filters() {
   return (
-    <div className="filtros">
+    <div className="min-w-fit">
       <p className="font-dosis font-bold text-xl">Refine sua busca</p>
       <p className="font-bold mt-8 mb-4 text-gray-500 text-lg">Por preço</p>
       <ul className="flex flex-col gap-6">

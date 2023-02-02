@@ -5,6 +5,9 @@ module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      fontSize: {
+        fontSale: "10px",
+      },
       fontFamily: {
         sans: "Lato, sans-serif",
         dosis: "Dosis, sans-serif",
@@ -23,7 +26,10 @@ module.exports = {
           100: "#D14B8F",
           200: "#B6116E",
         },
-        button: "#7EBC43",
+        button: {
+          100: "#90D250",
+          200: "#7EBC43",
+        },
         sale: "#F79552",
       },
     },
