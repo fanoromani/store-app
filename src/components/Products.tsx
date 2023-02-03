@@ -13,6 +13,19 @@ export function Products() {
           <Card key={product} />
         ))}
       </div>
+      <div className="flex justify-center items-center mt-7 gap-2">
+        <div className="px-4 py-3 rounded-md border-[1px] border-pink-200 bg-pink-200 text-white">
+          1
+        </div>
+        <div className="px-4 py-3 rounded-md border-[1px] border-pink-200 text-pink-200">
+          1
+        </div>
+        <div className="px-4 py-3 rounded-md border-[1px] border-pink-200 text-pink-200">
+          1
+        </div>
+        <div className="text-pink-200">...</div>
+        <div className="text-pink-200">{"Próximo >>"}</div>
+      </div>
     </div>
   );
 }
