@@ -7,7 +7,7 @@ export function Card() {
       <Link
         href={{
           pathname: `/product/[route]`,
-          query: { route: "1" },
+          query: { route: "17" },
         }}
       >
         <div className="flex flex-col text-center items-center bg-white w-64 shadow-lg pb-5 pt-1">
