@@ -1,4 +1,5 @@
 import { Card } from "./Card";
+import { CaretLeft, CaretRight } from "phosphor-react";
 
 export function Products() {
   const products = [0, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -14,17 +15,21 @@ export function Products() {
         ))}
       </div>
       <div className="flex justify-center items-center mt-7 gap-2">
-        <div className="px-4 py-3 rounded-md border-[1px] border-pink-200 bg-pink-200 text-white">
+        <button className="text-pink-200">
+          <CaretLeft size={24} />
+        </button>
+        <button className="px-4 py-3 rounded-md border-[1px] border-pink-200 bg-pink-200 text-white">
           1
-        </div>
-        <div className="px-4 py-3 rounded-md border-[1px] border-pink-200 text-pink-200">
-          1
-        </div>
-        <div className="px-4 py-3 rounded-md border-[1px] border-pink-200 text-pink-200">
-          1
-        </div>
-        <div className="text-pink-200">...</div>
-        <div className="text-pink-200">{"Próximo >>"}</div>
+        </button>
+        <button className="px-4 py-3 rounded-md border-[1px] border-pink-200 text-pink-200">
+          2
+        </button>
+        <button className="px-4 py-3 rounded-md border-[1px] border-pink-200 text-pink-200">
+          3
+        </button>
+        <button className="text-pink-200">
+          <CaretRight size={24} />
+        </button>
       </div>
     </div>
   );

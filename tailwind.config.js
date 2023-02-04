@@ -11,6 +11,7 @@ module.exports = {
       fontFamily: {
         sans: "Lato, sans-serif",
         dosis: "Dosis, sans-serif",
+        saira: "Saira, sans-serif",
       },
       colors: {
         gray: {
