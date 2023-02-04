@@ -1,14 +1,7 @@
 import { Header } from "@/components/Header";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import {
-  CaretLeft,
-  CaretRight,
-  CaretDoubleLeft,
-  CaretCircleRight,
-  PlusCircle,
-  MinusCircle,
-} from "phosphor-react";
+import { CaretLeft, CaretRight, PlusCircle, MinusCircle } from "phosphor-react";
 
 export default function ProductPage() {
   const router = useRouter();
