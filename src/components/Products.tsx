@@ -2,9 +2,10 @@ import { Card } from "./Card";
 import { CaretDoubleLeft, CaretDoubleRight } from "phosphor-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { ProductProps } from "@/types";
 
 export function Products() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<ProductProps[]>([]);
 
   useEffect(() => {
     const callApi = async () => {
