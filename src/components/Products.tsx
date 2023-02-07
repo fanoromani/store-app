@@ -6,21 +6,35 @@ import { ProductProps } from "@/types";
 
 export function Products() {
   const [products, setProducts] = useState<ProductProps[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
     const callApi = async () => {
-      const response = await axios("https://dummyjson.com/products");
+      const response = await axios("https://dummyjson.com/products?limit=15");
       setProducts(response.data.products);
     };
     callApi();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const getPage = () => {
+    if (currentPage < 3) return [1, 2, 3, 4, 5];
+
+    return [
+      currentPage - 2,
+      currentPage - 1,
+      currentPage,
+      currentPage + 1,
+      currentPage + 2,
+    ];
+  };
+
   console.log(products);
 
   return (
     <div>
       <p className="text-gray-600 text-lg mb-8">
-        <span className="font-bold">49</span> produtos encontrados
+        <span className="font-bold">{products.length}</span> produtos
+        encontrados
       </p>
       <div className="flex flex-wrap gap-8">
         {products &&
@@ -36,21 +50,37 @@ export function Products() {
           ))}
       </div>
       <div className="flex justify-center items-center mt-7 gap-2">
-        <button className="text-pink-200 flex gap-1">
+        <button
+          className="text-pink-200 flex gap-1"
+          onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            setCurrentPage(currentPage - 1);
+          }}
+        >
           <CaretDoubleLeft size={24} />
-          First
         </button>
-        <button className="px-4 py-3 rounded-md border-[1px] border-pink-200 bg-pink-200 text-white">
-          1
-        </button>
-        <button className="px-4 py-3 rounded-md border-[1px] border-pink-200 text-pink-200">
-          2
-        </button>
-        <button className="px-4 py-3 rounded-md border-[1px] border-pink-200 text-pink-200">
-          3
-        </button>
-        <button className="text-pink-200 flex gap-1">
-          Last
+
+        {getPage().map((page) => (
+          <button
+            key={page}
+            onClick={() => {
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              setCurrentPage(page);
+            }}
+            className={`px-4 py-3 rounded-md border-[1px] border-pink-200 text-white ${
+              currentPage === page ? "bg-pink-200" : "bg-gray-200 text-pink-200"
+            }`}
+          >
+            {page}
+          </button>
+        ))}
+        <button
+          className="text-pink-200 flex gap-1"
+          onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            setCurrentPage(currentPage + 1);
+          }}
+        >
           <CaretDoubleRight size={24} />
         </button>
       </div>
