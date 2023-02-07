@@ -28,15 +28,9 @@ export function Products() {
   };
 
   const getPage = () => {
-    if (currentPage < 3) return [1, 2, 3, 4, 5];
+    if (currentPage < 3) return [1, 2, 3];
 
-    return [
-      currentPage - 2,
-      currentPage - 1,
-      currentPage,
-      currentPage + 1,
-      currentPage + 2,
-    ];
+    return [currentPage - 1, currentPage, currentPage + 1];
   };
 
   console.log(products);
