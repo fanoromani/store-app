@@ -1,8 +1,20 @@
 import { Card } from "./Card";
 import { CaretDoubleLeft, CaretDoubleRight } from "phosphor-react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export function Products() {
-  const products = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const callApi = async () => {
+      const response = await axios("https://dummyjson.com/products");
+      setProducts(response.data.products);
+    };
+    callApi();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  console.log(products);
 
   return (
     <div>
@@ -10,9 +22,7 @@ export function Products() {
         <span className="font-bold">49</span> produtos encontrados
       </p>
       <div className="flex flex-wrap gap-8">
-        {products.map((product) => (
-          <Card key={product} />
-        ))}
+        {products && products.map((product) => <Card key={product.id} />)}
       </div>
       <div className="flex justify-center items-center mt-7 gap-2">
         <button className="text-pink-200 flex gap-1">
