@@ -7,14 +7,25 @@ import { ProductProps } from "@/types";
 export function Products() {
   const [products, setProducts] = useState<ProductProps[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [skip, setSkip] = useState(0);
 
   useEffect(() => {
     const callApi = async () => {
-      const response = await axios("https://dummyjson.com/products?limit=15");
+      const response = await axios(
+        `https://dummyjson.com/products?limit=15&skip=${skip}`
+      );
       setProducts(response.data.products);
     };
     callApi();
-  }, []);
+  }, [skip]);
+
+  const nextPage = async (page: number) => {
+    setSkip(15 * page);
+    const response = await axios(
+      `https://dummyjson.com/products?limit=15&skip=${skip}`
+    );
+    setProducts(response.data.products);
+  };
 
   const getPage = () => {
     if (currentPage < 3) return [1, 2, 3, 4, 5];
@@ -29,6 +40,7 @@ export function Products() {
   };
 
   console.log(products);
+  console.log(skip);
 
   return (
     <div>
@@ -55,6 +67,7 @@ export function Products() {
           onClick={() => {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             setCurrentPage(currentPage - 1);
+            setSkip(skip - 15);
           }}
         >
           <CaretDoubleLeft size={24} />
@@ -65,6 +78,8 @@ export function Products() {
             key={page}
             onClick={() => {
               window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              if (currentPage > page) setSkip(skip - 15);
+              else if (currentPage < page) setSkip(skip + 15);
               setCurrentPage(page);
             }}
             className={`px-4 py-3 rounded-md border-[1px] border-pink-200 text-white ${
@@ -79,6 +94,7 @@ export function Products() {
           onClick={() => {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             setCurrentPage(currentPage + 1);
+            setSkip(skip + 15);
           }}
         >
           <CaretDoubleRight size={24} />
