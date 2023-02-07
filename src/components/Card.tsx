@@ -1,7 +1,14 @@
+import { ProductProps } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
-export function Card() {
+export function Card({
+  id,
+  title,
+  price,
+  discountPercentage,
+  thumbnail,
+}: ProductProps) {
   return (
     <div>
       <Link

@@ -23,7 +23,23 @@ export function Products() {
         <span className="font-bold">49</span> produtos encontrados
       </p>
       <div className="flex flex-wrap gap-8">
-        {products && products.map((product) => <Card key={product.id} />)}
+        {products &&
+          products.map((product) => (
+            <Card
+              key={product.id}
+              id={product.id}
+              title={product.title}
+              brand={""}
+              category={""}
+              description={""}
+              price={0}
+              discountPercentage={0}
+              rating={0}
+              stock={0}
+              thumbnail={""}
+              images={[]}
+            />
+          ))}
       </div>
       <div className="flex justify-center items-center mt-7 gap-2">
         <button className="text-pink-200 flex gap-1">

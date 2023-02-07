@@ -11,3 +11,11 @@ export interface ProductProps {
   thumbnail: string;
   images: string[];
 }
+
+export interface ProductCardProps {
+  id: number;
+  title: string;
+  thumbnail: string;
+  price: number;
+  discountPercentage: number;
+}
