@@ -1,4 +1,4 @@
-import { ProductProps } from "@/types";
+import { ProductCardProps } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,7 +8,7 @@ export function Card({
   price,
   discountPercentage,
   thumbnail,
-}: ProductProps) {
+}: ProductCardProps) {
   return (
     <div>
       <Link
@@ -18,16 +18,14 @@ export function Card({
         }}
       >
         <div className="flex flex-col text-center items-center bg-white w-64 shadow-lg pb-5 pt-1">
-          <Image src="/wine.png" width={200} height={180} alt="Wine Bottle" />
-          <p className="font-bold text-base my-1">
-            Bacalhôa Meia Pipa Private Selection Castelão Syrah 2014
-          </p>
+          <Image src={thumbnail} width={200} height={180} alt="Wine Bottle" />
+          <p className="font-bold text-base my-1">{title}</p>
           <div className="flex gap-1 items-center my-2">
             <p className="font-bold text-gray-300 text-xs line-through">
               R$ 37,40
             </p>{" "}
             <span className="text-fontSale bg-sale text-white rounded-sm py-[1px] px-[2px]">
-              60% OFF
+              {discountPercentage}% OFF
             </span>
           </div>
           <div className="flex gap-1 items-baseline mb-1">
@@ -35,11 +33,15 @@ export function Card({
               Sócio wine
             </p>{" "}
             <span className="text-pink-200 text-base font-bold">
-              R$ <span className="text-2xl">30</span>,00
+              R${" "}
+              <span className="text-2xl">
+                {price - price * (discountPercentage * 0.01)}
+              </span>
+              ,00
             </span>
           </div>
           <p className="text-gray-300 font-bold text-xs uppercase">
-            Não sócio R$ 37,40
+            Não sócio R$ {price},00
           </p>
         </div>
       </Link>

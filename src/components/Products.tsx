@@ -29,15 +29,9 @@ export function Products() {
               key={product.id}
               id={product.id}
               title={product.title}
-              brand={""}
-              category={""}
-              description={""}
-              price={0}
-              discountPercentage={0}
-              rating={0}
-              stock={0}
-              thumbnail={""}
-              images={[]}
+              price={product.price}
+              discountPercentage={product.discountPercentage}
+              thumbnail={product.thumbnail}
             />
           ))}
       </div>
