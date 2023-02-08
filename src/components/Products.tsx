@@ -30,7 +30,7 @@ export function Products() {
 
   return (
     <div>
-      <p className="text-gray-600 text-lg mb-8">
+      <p className="text-base-600 text-lg mb-8">
         <span className="font-bold">{products.length}</span> produtos
         encontrados
       </p>
@@ -49,7 +49,7 @@ export function Products() {
       </div>
       <div className="flex justify-center items-center mt-7 gap-2">
         <button
-          className="text-pink-200 flex gap-1"
+          className="text-purple-200 flex gap-1"
           onClick={() => {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             setCurrentPage(currentPage - 1);
@@ -68,15 +68,17 @@ export function Products() {
               else if (currentPage < page) setSkip(skip + 15);
               setCurrentPage(page);
             }}
-            className={`px-4 py-3 rounded-md border-[1px] border-pink-200 text-white ${
-              currentPage === page ? "bg-pink-200" : "bg-gray-200 text-pink-200"
+            className={`px-4 py-3 rounded-md border-[1px] border-purple-200 text-white ${
+              currentPage === page
+                ? "bg-purple-200"
+                : "bg-base-200 text-purple-200"
             }`}
           >
             {page}
           </button>
         ))}
         <button
-          className="text-pink-200 flex gap-1"
+          className="text-purple-200 flex gap-1"
           onClick={() => {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             setCurrentPage(currentPage + 1);

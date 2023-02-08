@@ -21,20 +21,20 @@ export function Header() {
           />
         </Link>
 
-        <div className="font-dosis flex gap-12 text-lg">
-          <button className="hover:text-pink-100 hover:border-b-2 border-pink-100 py-6">
+        <div className="font-prompt flex gap-12 text-lg text-purple-300">
+          <button className="hover:text-purple-100 hover:border-b-2 border-purple-100 py-6">
             Clube
           </button>
-          <button className="hover:text-pink-100 hover:border-b-2 border-pink-100 py-6">
+          <button className="hover:text-purple-100 hover:border-b-2 border-purple-100 py-6">
             Loja
           </button>
-          <button className="hover:text-pink-100 hover:border-b-2 border-pink-100 py-6">
+          <button className="hover:text-purple-100 hover:border-b-2 border-purple-100 py-6">
             Produtos
           </button>
-          <button className="hover:text-pink-100 hover:border-b-2 border-pink-100 py-6">
+          <button className="hover:text-purple-100 hover:border-b-2 border-purple-100 py-6">
             Ofertas
           </button>
-          <button className="hover:text-pink-100 hover:border-b-2 border-pink-100 py-6">
+          <button className="hover:text-purple-100 hover:border-b-2 border-purple-100 py-6">
             Eventos
           </button>
         </div>

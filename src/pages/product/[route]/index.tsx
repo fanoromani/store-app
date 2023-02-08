@@ -26,7 +26,7 @@ export default function ProductPage() {
       <Header />
       <div className="max-w-[1440px] mt-10 flex flex-col gap-6 mx-96">
         <button
-          className="flex items-center text-xl gap-5 text-gray-700"
+          className="flex items-center text-xl gap-5 text-base-700"
           onClick={() => router.back()}
         >
           <CaretLeft size={32} />

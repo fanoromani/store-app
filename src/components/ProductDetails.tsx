@@ -17,13 +17,13 @@ export function ProductDetails({
     <div className="flex gap-40">
       <Image src={images[1]} width={380} height={580} alt="Wine Bottle" />
       <div className="flex flex-col gap-2 justify-start">
-        <div className="flex items-center gap-2 text-gray-300 font-bold">
-          <span className="text-pink-200 capitalize">{category}</span>
+        <div className="flex items-center gap-2 text-base-300 font-bold">
+          <span className="text-purple-200 capitalize">{category}</span>
           <CaretRight />
-          <span className="text-pink-200 capitalize">{brand}</span>
+          <span className="text-purple-200 capitalize">{brand}</span>
         </div>
-        <p className="font-bold text-3xl font-dosis">{title}</p>
-        <div className="flex gap-2 text-sm text-gray-400">
+        <p className="font-bold text-3xl font-prompt">{title}</p>
+        <div className="flex gap-2 text-sm text-base-400">
           <span>
             Stock: <span className="font-bold">{stock}</span>
           </span>
@@ -33,7 +33,7 @@ export function ProductDetails({
           </span>
         </div>
         <div className="my-12">
-          <p className="text-pink-200 font-black text-2xl">
+          <p className="text-purple-200 font-black text-2xl">
             R$
             <span className="text-4xl">
               {(price - price * (discountPercentage * 0.01))
@@ -42,10 +42,10 @@ export function ProductDetails({
                 .replace(".", ",")}
             </span>
           </p>
-          <p className="text-gray-300 font-bold">NON MEMBER ${price},00/UN</p>
+          <p className="text-base-300 font-bold">NON MEMBER ${price},00/UN</p>
         </div>
-        <p className="font-dosis font-bold text-xl">Description</p>
-        <p className="text-gray-400 font-saira">{description}</p>
+        <p className="font-prompt font-bold text-xl">Description</p>
+        <p className="text-base-400 font-saira">{description}</p>
         <div className="text-white flex items-center">
           <div className="flex gap-4 items-center bg-button-200 py-3 px-4 rounded-l-md">
             <button>

@@ -27,18 +27,18 @@ export function Card({
           />
           <p className="font-bold text-base my-1">{title}</p>
           <div className="flex gap-1 items-center my-2">
-            <p className="font-bold text-gray-300 text-xs line-through">
+            <p className="font-bold text-base-300 text-xs line-through">
               R$ {price},00
             </p>{" "}
-            <span className="text-fontSale bg-sale text-white rounded-sm py-[1px] px-[2px]">
+            <span className="text-fontSale bg-yellow-200 text-white rounded-sm py-[1px] px-[2px]">
               {discountPercentage}% OFF
             </span>
           </div>
           <div className="flex gap-1 items-baseline mb-1">
-            <p className="text-gray-700 text-xs font-bold uppercase">
+            <p className="text-base-700 text-xs font-bold uppercase">
               Club Member
             </p>{" "}
-            <span className="text-pink-200 text-base font-bold">
+            <span className="text-purple-300 text-base font-bold font-prompt">
               R${" "}
               <span className="text-2xl">
                 {(price - price * (discountPercentage * 0.01))
@@ -48,7 +48,7 @@ export function Card({
               </span>
             </span>
           </div>
-          <p className="text-gray-300 font-bold text-xs uppercase">
+          <p className="text-base-300 font-bold text-xs uppercase">
             Not Member R$ {price},00
           </p>
         </div>

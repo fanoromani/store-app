@@ -7,11 +7,11 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&family=Lato:wght@400;700;900&family=Saira&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Prompt:wght@700;800&family=Roboto:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </Head>
-      <body className="bg-gray-200 m-auto pb-20">
+      <body className="bg-base-200 m-auto pb-20">
         <Main />
         <NextScript />
       </body>
