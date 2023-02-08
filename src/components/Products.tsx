@@ -19,14 +19,6 @@ export function Products() {
     callApi();
   }, [skip]);
 
-  const nextPage = async (page: number) => {
-    setSkip(15 * page);
-    const response = await axios(
-      `https://dummyjson.com/products?limit=15&skip=${skip}`
-    );
-    setProducts(response.data.products);
-  };
-
   const getPage = () => {
     if (currentPage < 3) return [1, 2, 3];
 

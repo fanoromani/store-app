@@ -1,39 +1,49 @@
+import { ProductDetailProps } from "@/types";
 import Image from "next/image";
 import { CaretRight, MinusCircle, PlusCircle } from "phosphor-react";
 
-export function ProductDetails() {
+export function ProductDetails({
+  title,
+  price,
+  discountPercentage,
+  brand,
+  category,
+  description,
+  images,
+  rating,
+  stock,
+}: ProductDetailProps) {
   return (
     <div className="flex gap-40">
-      <Image src="/bigwine.png" width={380} height={580} alt="Wine Bottle" />
+      <Image src={images[1]} width={380} height={580} alt="Wine Bottle" />
       <div className="flex flex-col gap-2 justify-start">
         <div className="flex items-center gap-2 text-gray-300 font-bold">
-          <span className="text-pink-200">Vinhos</span>
+          <span className="text-pink-200">{category}</span>
           <CaretRight />
           <span className="text-pink-200">EUA</span>
           <CaretRight />
           <span>California</span>
         </div>
-        <p className="font-bold text-3xl font-dosis">Apothic Red 2019</p>
+        <p className="font-bold text-3xl font-dosis">{title}</p>
         <div className="flex gap-2 text-sm text-gray-400">
-          <span>EUA</span>
-          <span>Tinto</span>
-          <span>Meio Seco</span>
-          <span>750 ml</span>
+          <span>{brand}</span>
+          <span>{stock}</span>
+          <span>{rating}</span>
         </div>
         <div className="my-12">
           <p className="text-pink-200 font-black text-2xl">
-            R$<span className="text-4xl">63</span>,00
+            R$
+            <span className="text-4xl">
+              {(price - price * (discountPercentage * 0.01))
+                .toFixed(2)
+                .toString()
+                .replace(".", ",")}
+            </span>
           </p>
-          <p className="text-gray-300 font-bold">NAO SOCIO R$120,95/UN</p>
+          <p className="text-gray-300 font-bold">NON MEMBER ${price},00/UN</p>
         </div>
-        <p className="font-dosis font-bold text-xl">Comentario do Sommelier</p>
-        <p className="text-gray-400 font-saira">
-          Produzido no terroir californiano, esse tinto mescla as variedades
-          Zinfandel, Syrah, Cabernet Sauvignon e Merlot. Apothic é um vinho
-          inspirado nas antigas Apothecas (adegas subterrâneas), um lugar
-          misterioso onde há mais de 800 anos os viticultores misturavam e
-          armazenavam seus cobiçados vinhos.
-        </p>
+        <p className="font-dosis font-bold text-xl">Description</p>
+        <p className="text-gray-400 font-saira">{description}</p>
         <div className="text-white flex items-center">
           <div className="flex gap-4 items-center bg-button-200 py-3 px-4 rounded-l-md">
             <button>
@@ -45,7 +55,7 @@ export function ProductDetails() {
             </button>
           </div>
           <button className="font-bold py-4 rounded-r-md px-12 bg-button-200">
-            Adicionar
+            Add to Cart
           </button>
         </div>
       </div>
