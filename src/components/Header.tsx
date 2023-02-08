@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MagnifyingGlass, ShoppingCart, User } from "phosphor-react";
 
 export function Header() {
   return (
@@ -16,7 +17,7 @@ export function Header() {
             alt="WINE Logo"
             width={0}
             height={0}
-            style={{ minWidth: "100px", minHeight: "30px" }}
+            style={{ minWidth: "120px", minHeight: "50px" }}
           />
         </Link>
 
@@ -38,9 +39,9 @@ export function Header() {
           </button>
         </div>
         <div className="flex gap-10">
-          <Image src="/search.svg" alt="Search Icon" width={56} height={56} />
-          <Image src="/avatar.svg" alt="Avatar Icon" width={56} height={56} />
-          <Image src="/winebox.svg" alt="Winebox Icon" width={56} height={56} />
+          <MagnifyingGlass size={32} color="#0c0c03" />
+          <User size={32} color="#0c0c03" />
+          <ShoppingCart size={32} color="#0c0c03" weight="fill" />
         </div>
       </header>
     </>
