@@ -1,6 +1,6 @@
 import { ProductDetailProps } from "@/types";
 import Image from "next/image";
-import { CaretRight, MinusCircle, PlusCircle } from "phosphor-react";
+import { CaretRight, MinusCircle, PlusCircle, Star } from "phosphor-react";
 
 export function ProductDetails({
   title,
@@ -18,17 +18,19 @@ export function ProductDetails({
       <Image src={images[1]} width={380} height={580} alt="Wine Bottle" />
       <div className="flex flex-col gap-2 justify-start">
         <div className="flex items-center gap-2 text-gray-300 font-bold">
-          <span className="text-pink-200">{category}</span>
+          <span className="text-pink-200 capitalize">{category}</span>
           <CaretRight />
-          <span className="text-pink-200">EUA</span>
-          <CaretRight />
-          <span>California</span>
+          <span className="text-pink-200 capitalize">{brand}</span>
         </div>
         <p className="font-bold text-3xl font-dosis">{title}</p>
         <div className="flex gap-2 text-sm text-gray-400">
-          <span>{brand}</span>
-          <span>{stock}</span>
-          <span>{rating}</span>
+          <span>
+            Stock: <span className="font-bold">{stock}</span>
+          </span>
+          <span>
+            {rating}{" "}
+            <Star className="inline" size={16} color="#F9B950" weight="fill" />
+          </span>
         </div>
         <div className="my-12">
           <p className="text-pink-200 font-black text-2xl">

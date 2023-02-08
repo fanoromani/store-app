@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Header />
       <div className="max-w-[1440px] mt-10 flex gap-40 mx-96">
-        <Filters />
+        {/* <Filters /> */}
         <Products />
       </div>
     </>

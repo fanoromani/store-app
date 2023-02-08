@@ -12,7 +12,7 @@ export function Products() {
   useEffect(() => {
     const callApi = async () => {
       const response = await axios(
-        `https://dummyjson.com/products?limit=15&skip=${skip}`
+        `https://dummyjson.com/products?limit=16&skip=${skip}`
       );
       setProducts(response.data.products);
     };
@@ -53,7 +53,7 @@ export function Products() {
           onClick={() => {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             setCurrentPage(currentPage - 1);
-            setSkip(skip - 15);
+            setSkip(skip - 16);
           }}
         >
           <CaretDoubleLeft size={24} />
@@ -80,7 +80,7 @@ export function Products() {
           onClick={() => {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             setCurrentPage(currentPage + 1);
-            setSkip(skip + 15);
+            setSkip(skip + 16);
           }}
         >
           <CaretDoubleRight size={24} />
