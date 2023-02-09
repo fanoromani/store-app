@@ -30,11 +30,11 @@ export function Products() {
 
   return (
     <div>
-      <p className="text-base-600 text-lg mb-8">
+      {/* <p className="text-base-600 text-lg mb-8">
         <span className="font-bold">{products.length}</span> produtos
         encontrados
-      </p>
-      <div className="flex flex-wrap gap-8">
+      </p> */}
+      <div className="flex justify-center flex-wrap gap-8">
         {products &&
           products.map((product) => (
             <Card

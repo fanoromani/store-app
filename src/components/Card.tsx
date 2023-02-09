@@ -30,7 +30,7 @@ export function Card({
             <p className="font-bold text-base-300 text-xs line-through">
               R$ {price},00
             </p>{" "}
-            <span className="text-fontSale bg-yellow-200 text-white rounded-sm py-[1px] px-[2px]">
+            <span className="text-fontSale bg-yellow-base text-white rounded-sm py-[1px] px-[2px]">
               {discountPercentage}% OFF
             </span>
           </div>
@@ -38,7 +38,7 @@ export function Card({
             <p className="text-base-700 text-xs font-bold uppercase">
               Club Member
             </p>{" "}
-            <span className="text-purple-300 text-base font-bold font-prompt">
+            <span className="text-purple-dark text-base font-bold font-prompt">
               R${" "}
               <span className="text-2xl">
                 {(price - price * (discountPercentage * 0.01))
