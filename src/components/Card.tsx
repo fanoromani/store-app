@@ -1,6 +1,7 @@
 import { ProductCardProps } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import { Minus, Plus } from "phosphor-react";
 
 export function Card({
   id,
@@ -10,25 +11,27 @@ export function Card({
   thumbnail,
 }: ProductCardProps) {
   return (
-    <div>
+    <div className="flex h-96 pt-4 flex-col text-center items-center bg-base-card rounded-tl-md rounded-br-md rounded-tr-3xl rounded-bl-3xl w-64 shadow-lg">
       <Link
         href={{
           pathname: `/product/[route]`,
           query: { route: id },
         }}
       >
-        <div className="flex flex-col text-center items-center bg-white w-64 shadow-lg pb-5 pt-1">
+        <div>
           <Image
             src={thumbnail}
             width={200}
             height={180}
             alt="Wine Bottle"
-            style={{ width: "200px", height: "180px" }}
+            style={{ width: "200px", height: "180px", borderRadius: "8px" }}
           />
-          <p className="font-bold text-base my-1">{title}</p>
-          <div className="flex gap-1 items-center my-2">
+          <p className="font-prompt text-xl font-bold text-base-subtitle my-1">
+            {title}
+          </p>
+          <div className="flex gap-1 items-center justify-center my-2">
             <p className="font-bold text-base-300 text-xs line-through">
-              R$ {price},00
+              $ {price},00
             </p>{" "}
             <span className="text-fontSale bg-yellow-base text-white rounded-sm py-[1px] px-[2px]">
               {discountPercentage}% OFF
@@ -39,7 +42,7 @@ export function Card({
               Club Member
             </p>{" "}
             <span className="text-purple-dark text-base font-bold font-prompt">
-              R${" "}
+              ${" "}
               <span className="text-2xl">
                 {(price - price * (discountPercentage * 0.01))
                   .toFixed(2)
@@ -53,9 +56,16 @@ export function Card({
           </p>
         </div>
       </Link>
-      <button className="bg-button-200 w-full py-3 px-6 uppercase text-white font-bold rounded text-sm mt-4 shadow-md hover:bg-button-100">
-        Add to cart
-      </button>
+      <div className="flex gap-2 mt-2">
+        <div className="bg-base-button p-2 flex items-center gap-2 rounded-md">
+          <Plus className="text-sm text-purple-base" />
+          <p>0</p>
+          <Minus className="text-sm text-purple-base" />
+        </div>
+        <button className="bg-purple-dark py-3 px-6 uppercase text-white font-bold rounded text-sm hover:bg-button-100">
+          Add to cart
+        </button>
+      </div>
     </div>
   );
 }

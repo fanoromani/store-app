@@ -30,9 +30,8 @@ export function Products() {
 
   return (
     <div>
-      <p className="text-base-600 text-lg mb-8">
-        <span className="font-bold">{products.length}</span> produtos
-        encontrados
+      <p className="text-base-subtitle font-extrabold text-3xl font-prompt mb-10">
+        Products found
       </p>
       <div className="flex justify-center flex-wrap gap-8">
         {products &&

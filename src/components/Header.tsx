@@ -4,7 +4,7 @@ import { MagnifyingGlass, ShoppingCart, User } from "phosphor-react";
 
 export function Header() {
   return (
-    <header className="w-full h-20 bg-base-background gap-64 flex items-center justify-center shadow-md">
+    <header className="w-full h-20 gap-64 flex items-center justify-center shadow-md">
       <Link
         href={{
           pathname: `/`,
