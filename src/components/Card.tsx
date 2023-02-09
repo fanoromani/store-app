@@ -75,7 +75,7 @@ export function Card({
             <Plus className="text-sm text-purple-base" />
           </button>
         </div>
-        <button className="bg-purple-dark py-3 px-6 uppercase text-white font-bold rounded text-sm hover:bg-button-100">
+        <button className="bg-purple-dark hover:bg-purple-base py-3 px-6 uppercase text-white font-bold rounded text-sm hover:bg-button-100">
           Add to cart
         </button>
       </div>
