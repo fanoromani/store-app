@@ -10,7 +10,7 @@ module.exports = {
       },
       fontFamily: {
         sans: "Roboto, sans-serif",
-        prompt: "Prompt, sans-serif",
+        josefin: "Josefin Sans, sans-serif",
       },
       colors: {
         base: {

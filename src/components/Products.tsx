@@ -30,7 +30,7 @@ export function Products() {
 
   return (
     <div>
-      <p className="text-base-subtitle font-extrabold text-3xl font-prompt mb-10">
+      <p className="text-base-subtitle font-extrabold text-3xl font-josefin mb-10">
         Products found
       </p>
       <div className="flex justify-center flex-wrap gap-8">
@@ -63,8 +63,8 @@ export function Products() {
             key={page}
             onClick={() => {
               window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-              if (currentPage > page) setSkip(skip - 15);
-              else if (currentPage < page) setSkip(skip + 15);
+              if (currentPage > page) setSkip(skip - 16);
+              else if (currentPage < page) setSkip(skip + 16);
               setCurrentPage(page);
             }}
             className={`px-4 py-3 rounded-md border-[1px] border-purple-200 text-white ${

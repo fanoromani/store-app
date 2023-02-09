@@ -2,6 +2,7 @@ import { ProductCardProps } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { Minus, Plus } from "phosphor-react";
+import { useState } from "react";
 
 export function Card({
   id,
@@ -10,8 +11,10 @@ export function Card({
   discountPercentage,
   thumbnail,
 }: ProductCardProps) {
+  const [counter, setCounter] = useState(0);
+
   return (
-    <div className="flex h-96 pt-4 flex-col text-center items-center bg-base-card rounded-tl-md rounded-br-md rounded-tr-3xl rounded-bl-3xl w-64 shadow-lg">
+    <div className="flex p-4 pt-4 flex-col text-center items-center bg-base-card rounded-tl-md rounded-br-md rounded-tr-3xl rounded-bl-3xl w-64 shadow-lg">
       <Link
         href={{
           pathname: `/product/[route]`,
@@ -24,16 +27,20 @@ export function Card({
             width={200}
             height={180}
             alt="Wine Bottle"
-            style={{ width: "200px", height: "180px", borderRadius: "8px" }}
+            style={{
+              width: "200px",
+              height: "180px",
+              borderRadius: "8px",
+            }}
           />
-          <p className="font-prompt text-xl font-bold text-base-subtitle my-1">
+          <p className="font-josefin text-xl font-bold text-base-subtitle my-1">
             {title}
           </p>
           <div className="flex gap-1 items-center justify-center my-2">
             <p className="font-bold text-base-300 text-xs line-through">
               $ {price},00
             </p>{" "}
-            <span className="text-fontSale bg-yellow-base text-white rounded-sm py-[1px] px-[2px]">
+            <span className="text-josefin bg-yellow-light text-yellow-dark text-sm rounded-sm py-[1px] px-[2px]">
               {discountPercentage}% OFF
             </span>
           </div>
@@ -41,7 +48,7 @@ export function Card({
             <p className="text-base-700 text-xs font-bold uppercase">
               Club Member
             </p>{" "}
-            <span className="text-purple-dark text-base font-bold font-prompt">
+            <span className="text-purple-dark text-base font-bold font-josefin">
               ${" "}
               <span className="text-2xl">
                 {(price - price * (discountPercentage * 0.01))
@@ -58,9 +65,13 @@ export function Card({
       </Link>
       <div className="flex gap-2 mt-2">
         <div className="bg-base-button p-2 flex items-center gap-2 rounded-md">
-          <Plus className="text-sm text-purple-base" />
-          <p>0</p>
-          <Minus className="text-sm text-purple-base" />
+          <button onClick={() => setCounter(counter - 1)}>
+            <Minus className="text-sm text-purple-base" />
+          </button>
+          <p>{counter}</p>
+          <button onClick={() => setCounter(counter + 1)}>
+            <Plus className="text-sm text-purple-base" />
+          </button>
         </div>
         <button className="bg-purple-dark py-3 px-6 uppercase text-white font-bold rounded text-sm hover:bg-button-100">
           Add to cart

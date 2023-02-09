@@ -15,19 +15,19 @@ export function ProductDetails({
 }: ProductDetailProps) {
   return (
     <div className="flex gap-40">
-      <Image src={images[1]} width={380} height={580} alt="Wine Bottle" />
+      <Image src={images[1]} width={380} height={580} alt="Product image" />
       <div className="flex flex-col gap-2 justify-start">
         <div className="flex items-center gap-2 text-base-300 font-bold">
           <span className="text-purple-200 capitalize">{category}</span>
           <CaretRight />
           <span className="text-purple-200 capitalize">{brand}</span>
         </div>
-        <p className="font-bold text-3xl font-prompt">{title}</p>
-        <div className="flex gap-2 text-sm text-base-400">
+        <p className="font-bold text-3xl font-josefin">{title}</p>
+        <div className="flex gap-10 text-sm text-base-400">
           <span>
             Stock: <span className="font-bold">{stock}</span>
           </span>
-          <span>
+          <span className="flex items-center gap-1">
             {rating}{" "}
             <Star className="inline" size={16} color="#F9B950" weight="fill" />
           </span>
@@ -44,7 +44,7 @@ export function ProductDetails({
           </p>
           <p className="text-base-300 font-bold">NON MEMBER ${price},00/UN</p>
         </div>
-        <p className="font-prompt font-bold text-xl">Description</p>
+        <p className="font-josefin font-bold text-xl">Description</p>
         <p className="text-base-400 font-saira">{description}</p>
         <div className="text-white flex items-center">
           <div className="flex gap-4 items-center bg-button-200 py-3 px-4 rounded-l-md">

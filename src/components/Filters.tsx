@@ -1,7 +1,7 @@
 export function Filters() {
   return (
     <div className="min-w-fit">
-      <p className="font-prompt font-bold text-xl">Refine sua busca</p>
+      <p className="font-josefin font-bold text-xl">Refine sua busca</p>
       <p className="font-bold mt-8 mb-4 text-base-500 text-lg">Por preço</p>
       <ul className="flex flex-col gap-6">
         <li className="flex gap-3 items-center">

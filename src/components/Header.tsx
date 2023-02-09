@@ -20,27 +20,32 @@ export function Header() {
         />
       </Link>
 
-      <div className="font-prompt flex gap-12 text-lg text-purple-300">
-        <button className="hover:text-purple-100 hover:border-b-2 border-purple-100 py-6">
+      <div className="font-josefin flex gap-12 text-lg text-purple-dark">
+        <button className="hover:text-purple-base hover:border-b-2 border-purple-base py-6">
           Clube
         </button>
-        <button className="hover:text-purple-100 hover:border-b-2 border-purple-100 py-6">
+        <button className="hover:text-purple-base hover:border-b-2 border-purple-base py-6">
           Loja
         </button>
-        <button className="hover:text-purple-100 hover:border-b-2 border-purple-100 py-6">
+        <button className="hover:text-purple-base hover:border-b-2 border-purple-base py-6">
           Produtos
         </button>
-        <button className="hover:text-purple-100 hover:border-b-2 border-purple-100 py-6">
+        <button className="hover:text-purple-base hover:border-b-2 border-purple-base py-6">
           Ofertas
         </button>
-        <button className="hover:text-purple-100 hover:border-b-2 border-purple-100 py-6">
+        <button className="hover:text-purple-base hover:border-b-2 border-purple-base py-6">
           Eventos
         </button>
       </div>
       <div className="flex gap-10">
-        <MagnifyingGlass size={32} color="#0c0c03" />
-        <User size={32} color="#0c0c03" />
-        <ShoppingCart size={32} color="#0c0c03" weight="fill" />
+        <MagnifyingGlass size={32} color="#8047F8" />
+        <User size={32} color="#8047F8" />
+        <div className="p-2 bg-yellow-light rounded-md relative">
+          <div className="text-xs font-bold rounded-full bg-yellow-dark text-white h-5 w-5 flex items-center justify-center absolute top-[-10px] right-[-10px]">
+            15
+          </div>
+          <ShoppingCart size={22} color="#C47F17" weight="fill" />
+        </div>
       </div>
     </header>
   );
