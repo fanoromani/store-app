@@ -14,7 +14,7 @@ export function Card({
   const [counter, setCounter] = useState(0);
 
   return (
-    <div className="flex p-4 pt-4 flex-col text-center items-center bg-base-card rounded-tl-md rounded-br-md rounded-tr-3xl rounded-bl-3xl w-64 shadow-lg">
+    <div className="flex p-4 pt-4 flex-col text-center justify-between items-center bg-base-card rounded-tl-md rounded-br-md rounded-tr-3xl rounded-bl-3xl w-64 shadow-lg">
       <Link
         href={{
           pathname: `/product/[route]`,
@@ -31,9 +31,11 @@ export function Card({
               width: "200px",
               height: "180px",
               borderRadius: "8px",
+              marginRight: "8px",
+              marginLeft: "8px",
             }}
           />
-          <p className="font-josefin text-xl font-bold text-base-subtitle my-1">
+          <p className="font-josefin mx-4 text-xl font-bold text-base-subtitle my-1">
             {title}
           </p>
           <div className="flex gap-1 items-center justify-center my-2">
@@ -44,7 +46,7 @@ export function Card({
               {discountPercentage}% OFF
             </span>
           </div>
-          <div className="flex gap-1 items-baseline mb-1">
+          <div className="flex gap-1 justify-center items-baseline mb-1">
             <p className="text-base-700 text-xs font-bold uppercase">
               Club Member
             </p>{" "}
