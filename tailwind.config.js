@@ -15,9 +15,9 @@ module.exports = {
       colors: {
         base: {
           background: "#FAFAFA",
-          card: "#e4e4e4",
+          card: "#F3F2F2",
           input: "#EDEDED",
-          button: "#d2d2d2",
+          button: "#E6E5E5",
           hover: "#D7D5D5",
           label: "#8D8686",
           text: "#574F4D",
