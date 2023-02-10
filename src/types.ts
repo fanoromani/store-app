@@ -21,6 +21,8 @@ export interface ProductDetailProps {
   rating: number;
   stock: number;
   images: string[];
+  finalCart: number;
+  setFinalCart: Function;
 }
 
 export interface ProductCardProps {
@@ -29,4 +31,6 @@ export interface ProductCardProps {
   thumbnail: string;
   price: number;
   discountPercentage: number;
+  finalCart: number;
+  setFinalCart: Function;
 }

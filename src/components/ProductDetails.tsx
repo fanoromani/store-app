@@ -13,8 +13,11 @@ export function ProductDetails({
   images,
   rating,
   stock,
+  finalCart,
+  setFinalCart,
 }: ProductDetailProps) {
   const [counter, setCounter] = useState(0);
+  console.log(finalCart);
   return (
     <div className="flex gap-40">
       <Image src={images[0]} width={380} height={580} alt="Product image" />
@@ -41,7 +44,7 @@ export function ProductDetails({
         </div>
         <div className="my-12">
           <p className="text-purple-dark font-black text-2xl">
-            R$
+            $
             <span className="text-4xl">
               {(price - price * (discountPercentage * 0.01))
                 .toFixed(2)
@@ -56,14 +59,30 @@ export function ProductDetails({
         <div className="text-white w-fit mt-10 flex items-center bg-purple-dark">
           <div className="flex gap-4 items-center bg-button-200 py-3 px-4 rounded-l-md">
             <button>
-              <MinusCircle onClick={() => setCounter(counter - 1)} size={24} />
+              <MinusCircle
+                onClick={() => {
+                  setCounter(counter - 1);
+                }}
+                size={24}
+              />
             </button>
             <span className="text-2xl">{counter}</span>
             <button>
-              <PlusCircle onClick={() => setCounter(counter + 1)} size={24} />
+              <PlusCircle
+                onClick={() => {
+                  setCounter(counter + 1);
+                }}
+                size={24}
+              />
             </button>
           </div>
-          <button className="font-bold py-4 rounded-r-md border-l-[1px] hover:bg-purple-base border-l-purple-light px-12 bg-button-200">
+          <button
+            onClick={() => {
+              setFinalCart(finalCart + counter);
+              setCounter(0);
+            }}
+            className="font-bold py-4 rounded-r-md border-l-[1px] hover:bg-purple-base border-l-purple-light px-12 bg-button-200"
+          >
             Add to Cart
           </button>
         </div>

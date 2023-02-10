@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { MagnifyingGlass, ShoppingCart, User } from "phosphor-react";
 
-export function Header() {
+export function Header({ finalCart }: any) {
   return (
-    <header className="w-full h-20 gap-64 flex items-center justify-center shadow-md">
+    <header className="px-40 py-4 flex items-center justify-around shadow-md">
       <Link
         href={{
           pathname: `/`,
@@ -21,31 +21,38 @@ export function Header() {
       </Link>
 
       <div className="font-josefin flex gap-12 text-lg text-purple-dark">
-        <button className="hover:text-purple-base hover:border-b-2 border-purple-base py-6">
+        <button className="hover:text-purple-base hover:border-b-2 border-purple-base">
           Clube
         </button>
-        <button className="hover:text-purple-base hover:border-b-2 border-purple-base py-6">
+        <button className="hover:text-purple-base hover:border-b-2 border-purple-base">
           Loja
         </button>
-        <button className="hover:text-purple-base hover:border-b-2 border-purple-base py-6">
+        <button className="hover:text-purple-base hover:border-b-2 border-purple-base">
           Produtos
         </button>
-        <button className="hover:text-purple-base hover:border-b-2 border-purple-base py-6">
+        <button className="hover:text-purple-base hover:border-b-2 border-purple-base">
           Ofertas
         </button>
-        <button className="hover:text-purple-base hover:border-b-2 border-purple-base py-6">
+        <button className="hover:text-purple-base hover:border-b-2 border-purple-base">
           Eventos
         </button>
       </div>
       <div className="flex gap-10">
         <MagnifyingGlass size={32} color="#8047F8" />
         <User size={32} color="#8047F8" />
-        <div className="p-2 bg-yellow-light rounded-md relative">
-          <div className="text-xs font-bold rounded-full bg-yellow-dark text-white h-5 w-5 flex items-center justify-center absolute top-[-10px] right-[-10px]">
-            15
-          </div>
-          <ShoppingCart size={22} color="#C47F17" weight="fill" />
-        </div>
+        <Link
+          href={{
+            pathname: `payment/[route]`,
+            query: { route: "payment" },
+          }}
+        >
+          <button className="p-2 bg-yellow-light rounded-md relative">
+            <div className="text-xs font-bold rounded-full bg-yellow-dark text-black h-5 w-5 flex items-center justify-center absolute top-[-10px] right-[-10px]">
+              {finalCart}
+            </div>
+            <ShoppingCart size={22} color="#C47F17" weight="fill" />
+          </button>
+        </Link>
       </div>
     </header>
   );
