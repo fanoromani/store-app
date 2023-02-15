@@ -7,7 +7,7 @@ import {
 } from "phosphor-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { ProductProps } from "@/types";
+import { ProductProps } from "@/@types";
 
 export function Products({ finalCart, setFinalCart }: any) {
   const [products, setProducts] = useState<ProductProps[]>([]);

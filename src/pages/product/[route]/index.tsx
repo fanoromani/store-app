@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { ProductDetails } from "@/components/ProductDetails";
-import { ProductProps } from "@/types";
+import { ProductProps } from "@/@types";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { CaretLeft } from "phosphor-react";

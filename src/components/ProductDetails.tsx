@@ -1,4 +1,4 @@
-import { ProductDetailProps } from "@/types";
+import { ProductDetailProps } from "@/@types";
 import Image from "next/image";
 import { CaretRight, MinusCircle, PlusCircle, Star } from "phosphor-react";
 import { useState } from "react";

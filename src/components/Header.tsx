@@ -42,8 +42,7 @@ export function Header({ finalCart }: any) {
         <User size={32} color="#8047F8" />
         <Link
           href={{
-            pathname: `payment/[route]`,
-            query: { route: "payment" },
+            pathname: `/payment`,
           }}
         >
           <button className="p-2 bg-yellow-light rounded-md relative">

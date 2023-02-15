@@ -1,4 +1,4 @@
-import { ProductCardProps } from "@/types";
+import { ProductCardProps } from "@/@types";
 import Image from "next/image";
 import Link from "next/link";
 import { Minus, Plus } from "phosphor-react";
