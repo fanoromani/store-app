@@ -34,3 +34,15 @@ export interface ProductCardProps {
   finalCart: number;
   setFinalCart: Function;
 }
+
+export interface PaymentProductsProps {
+  finalCart: FinalCart;
+}
+
+export interface FinalCart {
+  id: number;
+  title: string;
+  price: number;
+  discountPercentage: number;
+  amount: number;
+}

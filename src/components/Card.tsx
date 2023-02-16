@@ -80,10 +80,10 @@ export function Card({
           </button>
         </div>
         <button
-          onClick={() => {
+          /* onClick={() => {
             setFinalCart(finalCart + counter);
             setCounter(0);
-          }}
+          }} */
           className="bg-purple-dark hover:bg-purple-base py-3 px-6 uppercase text-white font-bold rounded text-sm hover:bg-button-100"
         >
           Add to cart

@@ -1,10 +1,9 @@
+import { FinalCart } from "@/@types";
 import { PaymentAddress } from "@/components/PaymentAddress";
 import { PaymentMethod } from "@/components/PaymentMethod";
 import { PaymentProducts } from "@/components/PaymentProducts";
-import Image from "next/image";
-import { Minus, Plus, Trash } from "phosphor-react";
 
-export default function PaymentPage() {
+export default function PaymentPage(finalCart: FinalCart) {
   return (
     <div className="mt-10 flex gap-8 justify-center">
       <div className="flex flex-col gap-3">
@@ -18,7 +17,7 @@ export default function PaymentPage() {
         <h1 className="font-josefin text-lg font-bold text-base-subtitle">
           Selected Products
         </h1>
-        <PaymentProducts />
+        <PaymentProducts finalCart={finalCart} />
       </div>
     </div>
   );

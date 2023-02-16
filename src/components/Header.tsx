@@ -1,8 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MagnifyingGlass, ShoppingCart, User } from "phosphor-react";
+import { useEffect } from "react";
 
 export function Header({ finalCart }: any) {
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(finalCart));
+  }, [finalCart]);
+
   return (
     <header className="px-40 py-4 flex items-center justify-around shadow-md">
       <Link
@@ -47,7 +52,7 @@ export function Header({ finalCart }: any) {
         >
           <button className="p-2 bg-yellow-light rounded-md relative">
             <div className="text-xs font-bold rounded-full bg-yellow-dark text-black h-5 w-5 flex items-center justify-center absolute top-[-10px] right-[-10px]">
-              {finalCart}
+              {/* {finalCart} */}
             </div>
             <ShoppingCart size={22} color="#C47F17" weight="fill" />
           </button>

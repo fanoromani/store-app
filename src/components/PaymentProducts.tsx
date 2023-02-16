@@ -1,13 +1,14 @@
+import { PaymentProductsProps } from "@/@types";
 import Image from "next/image";
 import { Minus, Plus, Trash } from "phosphor-react";
 
-export function PaymentProducts() {
+export function PaymentProducts(finalCart: PaymentProductsProps) {
   return (
     <div className="flex flex-col gap-6 bg-base-card p-10 rounded-tl-md rounded-br-md rounded-tr-3xl rounded-bl-3xl">
       <div className="flex gap-5 border-b-[1px] border-base-button py-6">
         <Image src={"/banner.png"} alt="" width={64} height={64} />
         <div>
-          <p className="text-base-subtitle">Expresso Tradicional</p>
+          <p className="text-base-subtitle">{finalCart.finalCart.title}</p>
           <div className="flex gap-2">
             <div className="bg-base-button w-fit p-1 flex items-center gap-2 rounded-md">
               <button>
@@ -24,7 +25,9 @@ export function PaymentProducts() {
             </button>
           </div>
         </div>
-        <p className="ml-8 font-bold text-base-text">$9,90</p>
+        <p className="ml-8 font-bold text-base-text">
+          ${finalCart.finalCart.price},90
+        </p>
       </div>
       <div className="flex gap-5 border-b-[1px] border-base-button py-6">
         <Image src={"/banner.png"} alt="" width={64} height={64} />
