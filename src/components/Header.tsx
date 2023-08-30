@@ -27,19 +27,19 @@ export function Header({ finalCart }: any) {
 
       <div className="font-josefin flex gap-12 text-lg text-purple-dark">
         <button className="hover:text-purple-base hover:border-b-2 border-purple-base">
-          Clube
+          Club
         </button>
         <button className="hover:text-purple-base hover:border-b-2 border-purple-base">
-          Loja
+          Store
         </button>
         <button className="hover:text-purple-base hover:border-b-2 border-purple-base">
-          Produtos
+          Products
         </button>
         <button className="hover:text-purple-base hover:border-b-2 border-purple-base">
-          Ofertas
+          Offers
         </button>
         <button className="hover:text-purple-base hover:border-b-2 border-purple-base">
-          Eventos
+          Events
         </button>
       </div>
       <div className="flex gap-10">

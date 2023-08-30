@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Clock, Package, ShoppingCart, Timer } from "phosphor-react";
+import { Clock, Handshake, Package, ShoppingCart, Timer } from "phosphor-react";
 
 export default function Banner() {
   return (
@@ -7,11 +7,10 @@ export default function Banner() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="font-josefin font-extrabold text-base-title text-5xl mb-4">
-            Encontre o café perfeito para qualquer hora do dia
+            Find the perfect products. Anytime. All the time.
           </h1>
           <p className="text-xl text-base-subtitle mb-16">
-            Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
-            hora
+            Have them delivered to you where ever you are. Quick and easy.
           </p>
           <div className="flex gap-10">
             <div className="flex flex-col gap-5">
@@ -36,8 +35,10 @@ export default function Banner() {
                 <div>Quality packaging</div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-purple-base rounded-full"></div>
-                <div>Quality packaging</div>
+                <div className="p-2 bg-purple-base rounded-full">
+                  <Handshake fill="#fff" weight="fill" />
+                </div>
+                <div>Ethics and Responsability</div>
               </div>
             </div>
           </div>
